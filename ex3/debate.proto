@@ -1,0 +1,9 @@
+service Candidate{
+    rpc Answer(AnswerRequest) returns (AnswerReply){}
+    rpc Elaborate(ElaborateRequest) returns (ElaborateReply) {}
+}
+
+message AnswerRequest{}
+message AnswerReply{}
+message ElaborateRequest{}
+message ElaborateReply{}
