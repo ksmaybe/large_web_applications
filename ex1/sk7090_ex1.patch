@@ -1,0 +1,76 @@
+diff --git a/ex1/README.md b/ex1/README.md
+new file mode 100644
+index 0000000..c1116b1
+--- /dev/null
++++ b/ex1/README.md
+@@ -0,0 +1,8 @@
++# sk7090 ex1 README
++
++to run:
++python3 prober.py `url` `samples_file`
++
++if no sample_file name input, default is treated as "samples.txt"
++
++if redirected, it will record immediate response 300+ and not redirect
+\ No newline at end of file
+diff --git a/ex1/prober.py b/ex1/prober.py
+new file mode 100644
+index 0000000..046f4e9
+--- /dev/null
++++ b/ex1/prober.py
+@@ -0,0 +1,55 @@
++import requests
++import time
++import sys
++nl='\n'
++repeat=30
++
++def main(argv):
++    if len(argv)<2 or len(argv)>3:
++        print("Enter command line <url> <sample_file>")
++        sys.exit(-1)
++    url=sys.argv[1]+":80"
++    if len(argv)==3:
++
++        filePath=sys.argv[2]
++    else: #assume url given but sample_file_name not given
++        filePath="samples.txt"
++
++    currTimer=time.time()
++    start=int(currTimer)
++    #try get initial response and write url to samples file
++    try:
++        response=requests.get(url,allow_redirects=False,timeout=30)
++        print(response.status_code)
++        with open(filePath,"w+") as file:
++            file.write("URL="+url[7:-3]+nl)
++            file.write(str(start)+','+str(response.status_code)+nl)
++
++    except:
++        print(-1)
++        with open(filePath,"w+") as file:
++            file.write("URL="+url[7:-3]+nl)
++            file.write(str(start)+','+str(-1)+nl)
++
++
++    #loop every 30 seconds
++    while True:
++
++
++        if time.time()-currTimer>repeat:
++            try:
++                print(start)
++                start+=repeat
++                currTimer=time.time()
++                response=requests.get(url,allow_redirects=False,timeout=30)
++                print(response.status_code)
++                with open(filePath,"a+") as file:
++                    file.write(str(start)+','+str(response.status_code)+nl)
++            except:
++                print(-1)
++                with open(filePath,"a+") as file:
++                    file.write(str(start)+','+str(-1)+nl)
++
++
++
++main(sys.argv)
