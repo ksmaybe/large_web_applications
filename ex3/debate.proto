@@ -1,9 +1,25 @@
+syntax = "proto3";
+
+option java_package = "net.yairsovran.consultation";
+
 service Candidate{
     rpc Answer(AnswerRequest) returns (AnswerReply){}
     rpc Elaborate(ElaborateRequest) returns (ElaborateReply) {}
 }
 
-message AnswerRequest{}
-message AnswerReply{}
-message ElaborateRequest{}
-message ElaborateReply{}
+message AnswerRequest {
+    string question = 1;
+}
+
+message AnswerReply{
+    string answer = 1;
+}
+
+message ElaborateRequest{
+    string topic = 1;
+    int32 blah_run=2;
+}
+
+message ElaborateReply{
+    string answer = 1;
+}
