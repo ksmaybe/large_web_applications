@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/assignments" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ex3/grpc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/scalica/depot" vcs="Git" />
   </component>
 </project>
