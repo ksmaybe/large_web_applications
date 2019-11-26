@@ -17,7 +17,7 @@ message AnswerReply{
 
 message ElaborateRequest{
     string topic = 1;
-    int32 blah_run=2;
+    repeated int32 blah_run=2;
 }
 
 message ElaborateReply{

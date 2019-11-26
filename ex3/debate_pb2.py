@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=_b('\n\033net.yairsovran.consultation'),
-  serialized_pb=_b('\n\x0c\x64\x65\x62\x61te.proto\"!\n\rAnswerRequest\x12\x10\n\x08question\x18\x01 \x01(\t\"\x1d\n\x0b\x41nswerReply\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\t\"3\n\x10\x45laborateRequest\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x10\n\x08\x62lah_run\x18\x02 \x01(\x05\" \n\x0e\x45laborateReply\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\t2h\n\tCandidate\x12(\n\x06\x41nswer\x12\x0e.AnswerRequest\x1a\x0c.AnswerReply\"\x00\x12\x31\n\tElaborate\x12\x11.ElaborateRequest\x1a\x0f.ElaborateReply\"\x00\x42\x1d\n\x1bnet.yairsovran.consultationb\x06proto3')
+  serialized_pb=_b('\n\x0c\x64\x65\x62\x61te.proto\"!\n\rAnswerRequest\x12\x10\n\x08question\x18\x01 \x01(\t\"\x1d\n\x0b\x41nswerReply\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\t\"3\n\x10\x45laborateRequest\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x10\n\x08\x62lah_run\x18\x02 \x03(\x05\" \n\x0e\x45laborateReply\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\t2h\n\tCandidate\x12(\n\x06\x41nswer\x12\x0e.AnswerRequest\x1a\x0c.AnswerReply\"\x00\x12\x31\n\tElaborate\x12\x11.ElaborateRequest\x1a\x0f.ElaborateReply\"\x00\x42\x1d\n\x1bnet.yairsovran.consultationb\x06proto3')
 )
 
 
@@ -104,8 +104,8 @@ _ELABORATEREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='blah_run', full_name='ElaborateRequest.blah_run', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
