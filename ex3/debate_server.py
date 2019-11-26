@@ -40,7 +40,7 @@ class CandidateServicer(debate_pb2_grpc.CandidateServicer):
             return debate_pb2.ElaborateReply(answer=e)
         for n in request.blah_run:
             ans+=n*"blah "
-            ans+=e
+            ans+=e+" "
         return debate_pb2.ElaborateReply(answer=ans)
 
 
